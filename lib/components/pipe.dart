@@ -11,25 +11,21 @@ class Pipe extends SpriteComponent with HasGameRef<FlappyBirdGame> {
   final double height;
   final PipePosition pipePosition;
 
-
   @override
-  onLoad() async{
-    final pipe=await Flame.images.load(Assets.pipe);
-    final pipeRotated=await Flame.images.load(Assets.pipeRotated);
-    size=Vector2(50,height);
+  onLoad() async {
+    final pipe = await Flame.images.load(Assets.pipe);
+    final pipeRotated = await Flame.images.load(Assets.pipeRotated);
+    size = Vector2(50, height);
 
     switch (pipePosition) {
       case PipePosition.top:
-        position.y=0;
-        sprite=Sprite(pipeRotated);
+        position.y = 0;
+        sprite = Sprite(pipeRotated);
         break;
       case PipePosition.bottom:
-        position.y=gameRef.size.y-size.y-Config.groundHeight;
-        sprite=Sprite(pipe);
+        position.y = gameRef.size.y - size.y - Config.groundHeight;
+        sprite = Sprite(pipe);
         break;
-      default:
-
     }
-
   }
 }
