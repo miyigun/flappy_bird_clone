@@ -1,4 +1,1 @@
-enum BirdMovement {
-  middle,up,down
-}
-
+enum BirdMovement { middle, up, down }

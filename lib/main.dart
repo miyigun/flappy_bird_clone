@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final game=FlappyBirdGame();
+  final game = FlappyBirdGame();
 
-  runApp(GameWidget(game: game),);
+  runApp(
+    GameWidget(game: game),
+  );
 }
-
-

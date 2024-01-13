@@ -11,16 +11,13 @@ class Ground extends ParallaxComponent<FlappyBirdGame> {
   @override
   Future<void> onLoad() async {
     final ground = await Flame.images.load(Assets.ground);
-    parallax=Parallax(
-      [
-        ParallaxLayer(ParallaxImage(ground, fill: LayerFill.none))
-      ]
-    );
+    parallax =
+        Parallax([ParallaxLayer(ParallaxImage(ground, fill: LayerFill.none))]);
   }
 
   @override
   void update(double dt) {
     super.update(dt);
-    parallax?.baseVelocity.x=Config.gameSpeed;
+    parallax?.baseVelocity.x = Config.gameSpeed;
   }
 }

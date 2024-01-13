@@ -35,15 +35,13 @@ class Bird extends SpriteGroupComponent<BirdMovement>
     position.y += Config.birdVelocity * dt;
   }
 
-  fly(){
+  fly() {
     add(MoveByEffect(
-        Vector2(0, -Config.gravity),
-        EffectController(duration: 0.2, curve: Curves.decelerate),
-      onComplete: ()  =>  current = BirdMovement.down,
+      Vector2(0, -Config.gravity),
+      EffectController(duration: 0.2, curve: Curves.decelerate),
+      onComplete: () => current = BirdMovement.down,
     ));
 
-    current=BirdMovement.up;
-
+    current = BirdMovement.up;
   }
-
 }

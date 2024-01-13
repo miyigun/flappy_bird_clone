@@ -11,17 +11,17 @@ class FlappyBirdGame extends FlameGame with TapDetector {
   FlappyBirdGame();
 
   late Bird bird;
-  Timer interval=Timer(Config.pipeInterval, repeat: true);
+  Timer interval = Timer(Config.pipeInterval, repeat: true);
 
   @override
-  Future<void> onLoad() async{
+  Future<void> onLoad() async {
     addAll([
       Background(),
       Ground(),
-      bird=Bird(),
+      bird = Bird(),
     ]);
 
-    interval.onTick=() => add(PipeGroup());
+    interval.onTick = () => add(PipeGroup());
   }
 
   @override
@@ -37,5 +37,4 @@ class FlappyBirdGame extends FlameGame with TapDetector {
 
     bird.fly();
   }
-
 }

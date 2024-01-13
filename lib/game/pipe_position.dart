@@ -1,3 +1,1 @@
-enum PipePosition {
-  top, bottom
-}
+enum PipePosition { top, bottom }

@@ -8,6 +8,7 @@ import 'package:flappy_bird_clone/game/pipe_position.dart';
 class Pipe extends SpriteComponent with HasGameRef<FlappyBirdGame> {
   Pipe({required this.height, required this.pipePosition});
 
+  @override
   final double height;
   final PipePosition pipePosition;
 
