@@ -3,18 +3,17 @@ import 'package:flappy_bird_clone/game/flappy_bird_game.dart';
 import 'package:flutter/material.dart';
 
 class MainMenuScreen extends StatelessWidget {
-  const MainMenuScreen({Key? key, required this.game}): super(key: key);
-  
+  const MainMenuScreen({Key? key, required this.game}) : super(key: key);
+
   final FlappyBirdGame game;
-  static const String id='mainMenu';
+  static const String id = 'mainMenu';
 
   @override
   Widget build(BuildContext context) {
     game.pauseEngine();
-    
-    return Scaffold(
-      body: GestureDetector(
-        onTap: (){
+
+    return GestureDetector(
+        onTap: () {
           game.overlays.remove('mainMenu');
           game.resumeEngine();
         },
@@ -23,13 +22,11 @@ class MainMenuScreen extends StatelessWidget {
           height: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(Assets.menu),
+              image: AssetImage(Assets.menu),
               fit: BoxFit.cover,
             ),
           ),
           child: Image.asset(Assets.message),
-        ),
-      ),
-    );
+        ));
   }
 }
