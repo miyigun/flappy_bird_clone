@@ -44,4 +44,13 @@ class Bird extends SpriteGroupComponent<BirdMovement>
 
     current = BirdMovement.up;
   }
+
+  gameOver(){
+    game.isCollided=true;
+    gameRef.pauseEngine();
+  }
+
+  reset(){
+    position=Vector2(50, gameRef.size.y/2-size.y/2);
+  }
 }
